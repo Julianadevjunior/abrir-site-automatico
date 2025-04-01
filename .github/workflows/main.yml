@@ -1,0 +1,12 @@
+name: Abrir Site Automaticamente
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'  # Executa a cada 3 horas
+
+jobs:
+  abrir_site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Acessar o site
+        run: curl -X GET "https://crmfelipe.streamlit.app/"
